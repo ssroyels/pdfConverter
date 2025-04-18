@@ -67,7 +67,7 @@ const Home = () => {
                 </p>
             
             <div className='flex flex-col items-center space-y-4'>
-                <input type="file" accept='.doc,docx' onChange={handleFileChange} className='hidden' id='FileInput' />
+                <input type="file" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  onChange={handleFileChange} className='hidden' id='FileInput' />
                 <label htmlFor="FileInput" className='w-full flex items-center justify-center px-4 py-6 bg-gray-100 text-gray-700 rounded-lg shadow-lg cursor-pointer hover:text-white border-blue-300 hover:bg-blue-700 duration:300 '>
                     <FaFileWord className='text-3xl mr-3'/>
                     <span className='text-3xl mr-2 '> {selectFile?selectFile.name:"Choose File"} </span>
