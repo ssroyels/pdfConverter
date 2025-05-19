@@ -6,7 +6,13 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 
-app.use(cors());
+app.use(cors({
+    origin:"https://pdfconverter-1-a1d1.onrender.com",
+    methods:["GET","POST","PATCH"]
+}
+{
+    Credential:true
+}));
 
 
 const storage = multer.diskStorage({
