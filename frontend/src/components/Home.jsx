@@ -24,9 +24,15 @@ const Home = () => {
         formData.append("file",selectFile);
 
         try{
-           const response = await axios.post(`https://pdfconverter-s0nr.onrender.com/convertFile`,formData,{
+                const response = await fetch("https://pdfconverter-s0nr.onrender.com/convertFile", {
+      method: "POST",
+      body: formData,
+    },{
                 responseType:"blob",
-            },{ withCredentials: true});
+             withCredentials: true});
+           // const response = await axios.post(`https://pdfconverter-s0nr.onrender.com/convertFile`,formData,{
+           //      responseType:"blob",
+           //  },{ withCredentials: true});
 
             const url = window.URL.createObjectURL(new Blob([response.data]))
             const link = document.createElement("a");
