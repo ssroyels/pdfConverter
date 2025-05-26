@@ -26,7 +26,7 @@ const Home = () => {
         try{
            const response = await axios.post(`https://pdfconverter-s0nr.onrender.com/convertFile`,formData,{
                 responseType:"blob",
-            },{credentials:true});
+            },{ withCredentials: true});
 
             const url = window.URL.createObjectURL(new Blob([response.data]))
             const link = document.createElement("a");
